@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShootEmUp_1514716", "ShootEmUp_1514716\ShootEmUp_1514716.csproj", "{0BC11E0D-805B-49F3-A406-4862DACF6085}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BC11E0D-805B-49F3-A406-4862DACF6085}.Debug|x86.ActiveCfg = Debug|x86
+		{0BC11E0D-805B-49F3-A406-4862DACF6085}.Debug|x86.Build.0 = Debug|x86
+		{0BC11E0D-805B-49F3-A406-4862DACF6085}.Release|x86.ActiveCfg = Release|x86
+		{0BC11E0D-805B-49F3-A406-4862DACF6085}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78BCA681-2B88-44DE-9D04-3C0A7FB866D4}
+	EndGlobalSection
+EndGlobal
