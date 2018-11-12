@@ -12,6 +12,16 @@ namespace ShootEmUp_1514716
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        /* Multiple levels*/ 
+        enum GameState
+        { MainMenu,
+          LevelOne,
+          LevelTwo,
+          EndOfGame,
+        }
+        /*                  */
+        GameState _state;
+
         public static Texture2D Player { get; private set; }
         public static Texture2D Seeker { get; private set; }
         public static Texture2D Wanderer { get; private set; }
@@ -22,7 +32,8 @@ namespace ShootEmUp_1514716
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            Instance = this;
+            Instance = this;
+
         }
 
         /// <summary>
@@ -39,7 +50,8 @@ namespace ShootEmUp_1514716
             graphics.PreferredBackBufferWidth = 920;
             graphics.PreferredBackBufferHeight = 600;
             graphics.IsFullScreen = false;
-            graphics.ApplyChanges();
+            graphics.ApplyChanges();
+
             EntityManager.Add(PlayerShip.Instance);
         }
 
@@ -81,8 +93,76 @@ namespace ShootEmUp_1514716
                 Exit();
             
             // TODO: Add your update logic here
-            EntityManager.Update();            EnemySpawner.Update();
+            EntityManager.Update();
+            EnemySpawner.Update();
             base.Update(gameTime);
+            switch (_state)
+            {
+                case GameState.MainMenu :
+                    UpdateMainMenu(gameTime);
+                    break;
+                case GameState.LevelOne:
+                    UpdateLevelOne(gameTime);
+                    break;
+            }
+        }
+
+        void UpdateMainMenu(GameTime gameTime)
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.H))
+            {
+               // EnemySpawner.playGame();
+                _state = GameState.LevelOne;
+
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.V))
+            {
+                EnemySpawner.PauseSpawn();
+
+                _state = GameState.MainMenu;
+                
+
+            }
+        }
+
+        void UpdateLevelOne(GameTime gameTime)
+        {
+            // Respond to user actions
+            // handle collisions
+            // update enemies for level1
+            if (Keyboard.GetState().IsKeyDown(Keys.V))
+            {
+                _state = GameState.MainMenu;
+
+            }
+        }
+
+        void DrawMainMenu(GameTime gameTime)
+        {
+            //draw main menu
+            spriteBatch.Begin(SpriteSortMode.Texture, BlendState.Additive);
+            //EntityManager.Draw(spriteBatch);
+
+            /* Draw the custom mouse cursor */
+            spriteBatch.Draw(GameRoot.Pointer, Input.MousePosition, Color.White);
+
+            spriteBatch.End();
+
+
+        }
+
+        void DrawLevelOne(GameTime gameTime)
+        {
+            spriteBatch.Begin(SpriteSortMode.Texture, BlendState.Additive);
+            EntityManager.Draw(spriteBatch);
+
+            /* Draw the custom mouse cursor */
+            spriteBatch.Draw(GameRoot.Pointer, Input.MousePosition, Color.White);
+
+            spriteBatch.End();
+
+
+
         }
 
         /// <summary>
@@ -95,8 +175,10 @@ namespace ShootEmUp_1514716
             // TODO: Add your drawing code here
 
             /* Background Colour */
-            GraphicsDevice.Clear(Color.Black);            spriteBatch.Begin(SpriteSortMode.Texture, BlendState.Additive);
-            EntityManager.Draw(spriteBatch);
+            GraphicsDevice.Clear(Color.Black);
+
+            spriteBatch.Begin(SpriteSortMode.Texture, BlendState.Additive);
+            //EntityManager.Draw(spriteBatch);
 
             /* Draw the custom mouse cursor */
             spriteBatch.Draw(GameRoot.Pointer, Input.MousePosition, Color.White);
@@ -104,6 +186,15 @@ namespace ShootEmUp_1514716
             spriteBatch.End();
 
             base.Draw(gameTime);
+            switch (_state)
+            {
+                case GameState.MainMenu:
+                    DrawMainMenu(gameTime);
+                    break;
+                case GameState.LevelOne:
+                    DrawLevelOne(gameTime);
+                    break;
+            }
         }
 
         public static GameRoot Instance { get; private set; }

@@ -57,7 +57,9 @@ namespace ShootEmUp_1514716
                     Orientation = Velocity.ToAngle();
                 yield return 0;
             }
-        }        private void AddBehaviour(IEnumerable<int> behaviour)
+        }
+
+        private void AddBehaviour(IEnumerable<int> behaviour)
         {
             behaviours.Add(behaviour.GetEnumerator());
         }
@@ -69,15 +71,20 @@ namespace ShootEmUp_1514716
                 if (!behaviours[i].MoveNext())
                     behaviours.RemoveAt(i --);
             }
-        }        public static Enemy CreateSeeker(Vector2 position)
+        }
+
+        public static Enemy CreateSeeker(Vector2 position)
         {
             var enemy = new Enemy(GameRoot.Seeker, position);
             enemy.AddBehaviour(enemy.FollowPlayer());
             return enemy;
-        }        public void HandleCollision(Enemy other)
+        }
+
+        public void HandleCollision(Enemy other)
         {
             var d = Position - other.Position;
             Velocity += 10 * d / (d.LengthSquared() + 1);
-        }
+        }
+
     }
 }

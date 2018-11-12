@@ -22,6 +22,7 @@ namespace ShootEmUp_1514716
         public bool IsDead { get { return framesUntilRespawn > 0; } }
         /**/
         private static PlayerShip instance;
+
         public static PlayerShip Instance
         {
             get

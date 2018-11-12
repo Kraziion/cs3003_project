@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/barto/source/repos/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Pointer.png</SourceFile>
-  <SourceTime>2013-07-26T02:27:26+01:00</SourceTime>
-  <DestFile>C:/Users/barto/source/repos/ShootEmUp_1514716/ShootEmUp_1514716/Content/bin/Windows/Art/Pointer.xnb</DestFile>
-  <DestTime>2018-11-06T15:06:17.9415576+00:00</DestTime>
+  <SourceFile>C:/cs3003_project/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Pointer.png</SourceFile>
+  <SourceTime>2018-11-12T16:54:38.7787491+00:00</SourceTime>
+  <DestFile>C:/cs3003_project/ShootEmUp_1514716/ShootEmUp_1514716/Content/bin/Windows/Art/Pointer.xnb</DestFile>
+  <DestTime>2018-11-12T17:05:46.4411388+00:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T15:05:36+00:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

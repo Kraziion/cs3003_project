@@ -4,10 +4,10 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/barto/source/repos/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Bullet.png</File>
-    <File>C:/Users/barto/source/repos/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Player.png</File>
-    <File>C:/Users/barto/source/repos/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Pointer.png</File>
-    <File>C:/Users/barto/source/repos/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Seeker.png</File>
-    <File>C:/Users/barto/source/repos/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Wanderer.png</File>
+    <File>C:/cs3003_project/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Bullet.png</File>
+    <File>C:/cs3003_project/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Player.png</File>
+    <File>C:/cs3003_project/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Pointer.png</File>
+    <File>C:/cs3003_project/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Seeker.png</File>
+    <File>C:/cs3003_project/ShootEmUp_1514716/ShootEmUp_1514716/Content/Art/Wanderer.png</File>
   </SourceFiles>
 </SourceFileCollection>

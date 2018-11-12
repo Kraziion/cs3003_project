@@ -11,10 +11,11 @@ namespace ShootEmUp_1514716
     {
         static Random rand = new Random();
         static float inverseSpawnChance = 60;
+        static bool isPaused;
 
         public static void Update()
         {
-            if (!PlayerShip.Instance.IsDead && EntityManager.Count < 200)
+            if (!PlayerShip.Instance.IsDead && EntityManager.Count < 200 && !isPaused)
             {
                 if (rand.Next((int)inverseSpawnChance) == 0)
                     EntityManager.Add(Enemy.CreateSeeker(GetSpawnPosition()));
@@ -42,6 +43,16 @@ namespace ShootEmUp_1514716
         public static void Reset()
         {
             inverseSpawnChance = 60;
+        }
+
+        public static void PauseSpawn()
+        {
+            isPaused = true;
+        }
+
+        public static void playGame()
+        {
+            isPaused = false;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace ShootEmUp_1514716
         static List<Entity> addedEntities = new List<Entity>();
         public static int Count { get { return entities.Count; } }
 
-        public static object entity { get; private set; }
+       // public static object entity { get; private set; }
 
         static List<Enemy> enemies = new List<Enemy>();
         static List<Bullet> bullets = new List<Bullet>();
@@ -33,14 +33,12 @@ namespace ShootEmUp_1514716
         public static void Add(Entity entity)
         {
             if (!isUpdating)
-                entities.Add(entity);
-            if (entity is Bullet)
-                bullets.Add(entity as Bullet);
-            if (entity is Enemy)
-               enemies.Add(entity as Enemy);
+                // entities.Add(entity);
+                AddEntity(entity);
             else
                 addedEntities.Add(entity);
-        }
+        }
+
         private static bool IsColliding(Entity a, Entity b)
         {
             float radius = a.Radius + b.Radius;
@@ -54,6 +52,7 @@ namespace ShootEmUp_1514716
             bullets = bullets.Where(x => !x.IsExpired).ToList();
             enemies = enemies.Where(x => !x.IsExpired).ToList();
 
+
             HandleCollisions();
             isUpdating = true;
 
@@ -61,8 +60,8 @@ namespace ShootEmUp_1514716
             entity.Update();
             isUpdating = false;
             foreach (var entity in addedEntities)
-                entities.Add(entity);
-            //entities.AddEntity(entity);
+              //  entities.Add(entity);
+            AddEntity(entity);
             addedEntities.Clear();
             // remove any expired entities .
             entities = entities.Where(x => !x.IsExpired).ToList();
@@ -103,13 +102,14 @@ namespace ShootEmUp_1514716
                 enemies[i]))
                 {
                     PlayerShip.Instance.Kill();
-                    // X does not exist in current context
-                    //enemies.ForEach(x = > x.WasShot()); 
+                    enemies.ForEach(x => x.WasShot()); 
                     break;
                 }
+
             }
         }
 
 
-    }
+    }
+
 }
